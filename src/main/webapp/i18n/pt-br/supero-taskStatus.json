@@ -1,0 +1,9 @@
+{
+    "superoApp": {
+        "TaskStatus" : {
+            "null": "",
+            "PENDING": "Pendente",
+            "COMPLETE": "Completa"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+{
+    "superoApp": {
+        "superoTask" : {
+            "home": {
+                "title": "Tarefas",
+                "createLabel": "Criar nova tarefa",
+                "createOrEditLabel": "Criar ou editar tarefa"
+            },
+            "created": "Uma nova tarefa foi criado com o identificador {{ param }}",
+            "updated": "Uma tarefa foi atualizado com o identificador {{ param }}",
+            "deleted": "Uma tarefa foi apagada com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir a tarefa {{ id }}?"
+            },
+            "detail": {
+                "title": "Tarefa"
+            },
+            "title": "Título",
+            "description": "Descrição",
+            "status": "Status",
+            "creationDate": "Criada em",
+            "updateDate": "Atualizada em",
+            "completionDate": "Finalizada em",
+            "deletionDate": "Removida em",
+            "deletedStatus": "Removida",
+            "pending": "Pendentes",
+            "completed": "Completas"
+        }
+    }
+}

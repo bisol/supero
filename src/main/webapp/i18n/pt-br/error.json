@@ -3,6 +3,7 @@
         "title": "Página de erro!",
         "http": {
             "400": "Bad request.",
+            "401": "Por favor, efetue login",
             "403": "Você não tem autorização para acessar esta página.",
             "405": "The HTTP verb you used is not supported for this URL.",
             "500": "Internal server error."

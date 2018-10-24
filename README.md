@@ -1,8 +1,27 @@
-# supero
+# Supero interview challenge
+
+A simple task board, with columns for pending ands completed tasks. Tasks can be moved between them wth drag and drop, or editing a task's details.
+It provides a detailed view (including task modification dates), and a update view (all dates are set automatically by the backend server). 
+There is a toolbar on the top, which allows for user login (admin/admin) and direct manipulation of the database.
+
+The app uses Spring Boot for the bakend and React with Bootstrap for the front end. 
+It was generated with JHipster (see below), saving a lot of time configuring the toolchain and boiler plate code (maven, npm, webpack, tests...)
+There are a LOT of generated files. The ones manually edited where:
+
+* SuperoTaskResource.java
+* SuperoTaskRepository.java
+* SuperoTaskResourceIntTest.java
+* files in /supero/src/main/webapp/app/modules/supero-task/
+
+The application will try to connect to a MariaDB server on localhosty:3306, and expects a database named 'supero' to exist. 
+To change this, edit the 'datasource' entry on these files: 
+
+    /supero/src/main/resources/config/application-prod.yml
+    /supero/src/main/resources/config/application-dev.yml
+
+## Usage
+
 This application was generated using JHipster 5.5.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.5.0](https://www.jhipster.tech/documentation-archive/v5.5.0).
-
-## Development
-
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
 1. [Node.js][]: We use Node to run a development web server and build the project.
@@ -21,49 +40,23 @@ auto-refreshes when files change on your hard drive.
     ./mvnw
     npm start
 
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [package.json](package.json). You can also run `npm update` and `npm install` to manage dependencies.
-Add the `help` flag on any command to see how you can use it. For example, `npm help update`.
-
+You can also run the backend from eclipse with the Spring Tool Suite plug in.
 The `npm run` command will list all of the scripts available to run for this project.
 
-### Service workers
 
-Service workers are commented by default, to enable them please uncomment the following code.
+## Building
 
-* The service worker registering script in index.html
+To build the supero application, run:
 
-```html
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-        .register('./service-worker.js')
-        .then(function() { console.log('Service Worker Registered'); });
-    }
-</script>
-```
+    ./mvnw -Pprod clean package
 
-Note: workbox creates the respective service worker and dynamically generate the `service-worker.js`
+To ensure everything worked, run:
 
-### Managing dependencies
-
-For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
-
-    npm install --save --save-exact leaflet
-
-To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run following command:
-
-    npm install --save-dev --save-exact @types/leaflet
-
-Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Note: there are still few other things remaining to do for Leaflet that we won't detail here.
-
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
-
-
+    java -jar target/*.war
 
 ## Building for production
 
+NOTE: This may require additional development packages to be installed on your system (like )
 To optimize the supero application for production, run:
 
     ./mvnw -Pprod clean package
@@ -131,29 +124,3 @@ Then run:
     docker-compose -f src/main/docker/app.yml up -d
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: https://www.jhipster.tech
-[JHipster 5.5.0 archive]: https://www.jhipster.tech/documentation-archive/v5.5.0
-
-[Using JHipster in development]: https://www.jhipster.tech/documentation-archive/v5.5.0/development/
-[Using Docker and Docker-Compose]: https://www.jhipster.tech/documentation-archive/v5.5.0/docker-compose
-[Using JHipster in production]: https://www.jhipster.tech/documentation-archive/v5.5.0/production/
-[Running tests page]: https://www.jhipster.tech/documentation-archive/v5.5.0/running-tests/
-[Code quality page]: https://www.jhipster.tech/documentation-archive/v5.5.0/code-quality/
-[Setting up Continuous Integration]: https://www.jhipster.tech/documentation-archive/v5.5.0/setting-up-ci/
-
-
-[Node.js]: https://nodejs.org/
-[Yarn]: https://yarnpkg.org/
-[Webpack]: https://webpack.github.io/
-[Angular CLI]: https://cli.angular.io/
-[BrowserSync]: http://www.browsersync.io/
-[Jest]: https://facebook.github.io/jest/
-[Jasmine]: http://jasmine.github.io/2.0/introduction.html
-[Protractor]: https://angular.github.io/protractor/
-[Leaflet]: http://leafletjs.com/
-[DefinitelyTyped]: http://definitelytyped.org/
