@@ -4,9 +4,10 @@ A simple task board, with columns for pending ands completed tasks. Tasks can be
 It provides a detailed view (including task modification dates), and a update view (all dates are set automatically by the backend server). 
 There is a toolbar on the top, which allows for user login (admin/admin) and direct manipulation of the database.
 
+The task list view uses a single InfinityScroll for the pendng and clompleted task lists. While this works, a better UI would have separate scrolls for these lists. It wasn't done for lack of time.
+
 The app uses Spring Boot for the bakend and React with Bootstrap for the front end. 
-It was generated with JHipster (see below), saving a lot of time configuring the toolchain and boiler plate code (maven, npm, webpack, tests...)
-There are a LOT of generated files. The ones manually edited where:
+It was generated with JHipster (see below), saving a lot of time configuring the toolchain and boiler plate code (maven, npm, webpack, tests...). There are a LOT of generated files. The ones manually edited where:
 
 * SuperoTaskResource.java
 * SuperoTaskRepository.java
